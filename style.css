@@ -41,6 +41,48 @@ nav ul li a:hover {
   color: #0f1951;
 }
 
+.hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #0077c2;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+       .hero-tagline {
+        font-size: 1.3rem;
+      }
+
+      .cta-button {
+        font-size: 0.95rem;
+      }
+    }
+
 .hero-image-wrapper {
   position: relative;
   width: 100%;
@@ -233,3 +275,4 @@ footer {
     padding: 30px 20px;
   }
 }
+
