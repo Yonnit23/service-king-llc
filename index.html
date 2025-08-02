@@ -5,165 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Service King Heating and Cooling LLC</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .contact-wrapper {
-      width: 100%;
-      background: linear-gradient(to right, #0c1a2f, #001021);
-      padding: 60px 0;
-    }
-
-    .contact {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 40px;
-      padding: 0 40px;
-      color: white;
-    }
-
-    .contact .info {
-      flex: 1;
-      color: white;
-    }
-
-    .contact .info h2 {
-      color: #0077c2;
-    }
-
-    .contact form {
-      flex: 1;
-      background-color: white;
-      padding: 30px;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      color: black;
-    }
-
-    .contact form h3 {
-      margin-top: 0;
-      font-size: 1.5rem;
-      color: #0077c2;
-    }
-
-    .contact form input,
-    .contact form select,
-    .contact form textarea {
-      font-size: 1rem;
-      padding: 16px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .contact form textarea {
-      min-height: 100px;
-    }
-
-    .contact form button {
-      padding: 14px;
-      background-color: #0077c2;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .contact form button:hover {
-      background-color: #005fa3;
-    }
-
-    @media (max-width: 768px) {
-      .contact {
-        flex-direction: column;
-        padding: 0 20px;
-      }
-    }
-
-    .service-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .service-cards li {
-      background: linear-gradient(to right, #0077c2, #00aaff);
-      border-radius: 12px;
-      padding: 30px 20px;
-      color: white;
-      font-weight: bold;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .service-cards li:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    }
-
-    .benefits-combined {
-      background: #f7f8f9;
-      padding: 60px 40px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 40px;
-    }
-
-    .benefits-combined .left, .benefits-combined .right {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .benefits-combined h2, .benefits-combined h3 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-
-    .benefits-combined p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-
-    .benefits-combined ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .benefits-combined li::before {
-      content: "\2714\0020";
-      color: #0077c2;
-    }
-
-    .benefits-box {
-      background: white;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
-      margin-top: 20px;
-    }
-  </style>
 </head>
 <body>
-  <nav class="gradient-nav">
+ <nav class="gradient-nav">
+  <div class="nav-container">
     <div class="logo">Service King</div>
-    <ul>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-  </nav>
+    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
 
   <div class="hero-image-wrapper">
     <img src="images/King.png" alt="Heating and Cooling" />
@@ -190,7 +48,6 @@
       </div>
     </div>
   </section>
-
 
   <section class="services" id="services">
     <h2>Our Services</h2>
@@ -239,5 +96,14 @@
   <footer>
     <p>&copy; 2025 Service King Heating and Cooling LLC. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Optional: Auto-close mobile menu when link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('show');
+      });
+    });
+  </script>
 </body>
 </html>
