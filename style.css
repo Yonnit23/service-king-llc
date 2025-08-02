@@ -29,6 +29,7 @@ nav.gradient-nav {
   background: linear-gradient(to right, #0077c2, #00aaff);
   color: white;
   padding: 15px 40px;
+  position: relative;
 }
 
 nav .logo {
@@ -59,6 +60,10 @@ nav ul li a:hover {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .hamburger span {
@@ -291,11 +296,22 @@ footer {
   }
 
   .hero-tagline {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+
+  .hero-overlay {
+    padding: 20px;
   }
 
   .cta-button {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .hero-image-wrapper img {
+    object-fit: cover;
+    height: auto;
   }
 
   .contact {
