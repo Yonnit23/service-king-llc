@@ -1,4 +1,18 @@
-/* style.css */
+/* RESET STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 body {
   margin: 0;
@@ -14,7 +28,7 @@ nav.gradient-nav {
   align-items: center;
   background: linear-gradient(to right, #0077c2, #00aaff);
   color: white;
-  padding: 15px 20px;
+  padding: 15px 40px;
 }
 
 nav .logo {
@@ -42,46 +56,17 @@ nav ul li a:hover {
 }
 
 .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
 
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: white;
-      margin: 4px 0;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: #0077c2;
-        flex-direction: column;
-        width: 100%;
-        padding: 10px;
-        border-radius: 8px;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-       .hero-tagline {
-        font-size: 1.3rem;
-      }
-
-      .cta-button {
-        font-size: 0.95rem;
-      }
-    }
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+}
 
 .hero-image-wrapper {
   position: relative;
@@ -164,16 +149,22 @@ section h2 {
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
+.contact-wrapper {
+  width: 100%;
+  background: linear-gradient(to right, #0c1a2f, #001021);
+  padding: 60px 0;
+}
+
 .contact {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #0c1a2f;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 0 40px;
   color: white;
-  border-radius: 12px;
-  padding: 40px;
-  margin-top: 60px;
-  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .contact .info {
@@ -181,7 +172,7 @@ section h2 {
 }
 
 .contact .info h2 {
-  color: white;
+  color: #0077c2;
 }
 
 .contact .info p {
@@ -206,9 +197,9 @@ section h2 {
   color: #0077c2;
 }
 
-.contact input,
-.contact select,
-.contact textarea {
+.contact form input,
+.contact form select,
+.contact form textarea {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -217,11 +208,11 @@ section h2 {
   box-sizing: border-box;
 }
 
-.contact textarea {
+.contact form textarea {
   min-height: 100px;
 }
 
-.contact button {
+.contact form button {
   padding: 12px;
   background-color: #0077c2;
   color: white;
@@ -233,7 +224,7 @@ section h2 {
   transition: background 0.3s;
 }
 
-.contact button:hover {
+.contact form button:hover {
   background-color: #005fa3;
 }
 
@@ -244,30 +235,67 @@ footer {
   color: white;
 }
 
-/* Responsive styles */
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
+.benefits-combined {
+  background: #f7f8f9;
+  padding: 60px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.benefits-combined .left, .benefits-combined .right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.benefits-box {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+.benefits-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits-box li::before {
+  content: "\2714\0020";
+  color: #0077c2;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hidden by default on mobile */
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #0077c2;
+    flex-direction: column; /* ✅ fine only for mobile */
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
   }
 
   .hero-tagline {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .cta-button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
-
-  section h2 {
-    font-size: 1.5rem;
+    font-size: 0.95rem;
   }
 
   .contact {
@@ -275,4 +303,3 @@ footer {
     padding: 30px 20px;
   }
 }
-
